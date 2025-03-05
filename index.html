@@ -4,13 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <!-- Project TItle & Icon -->
     <title>The System</title>
     <link rel="icon" type="image/x-icon" href="images/icon.png">
 
+    <!-- Stylesheets -->
     <link ref="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    
+    <div class="wrapper">
+        <header>
+            <div>
+                <a href="#nav">Skip to nav</a>
+                <a href="#content">Skip to content</a>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <div class="title">
+                        <li><a href="index.html"><h1>THE SYSTEM</h1></a></li>
+                    </div>
+
+                    <div class="navlinks">
+                        <li><a href="">Planets</a></li>
+                        <li><a href="">Interstellar</a></li>
+                        <li><a href="">Contact</a></li>
+                    </div>
+                    
+                </ul>
+            </nav>
+
+            <div class="splash" id="content">
+                <img class="splash-img" src="images/milky-way.jpg" alt="">
+                <div class="splash-text">
+                    <h6>THE SYSTEM MACHINE</h6>
+                    <h2>Welcome To The <span>Solar System</span></h2>
+                    <p>Take a tour around the coolest stellar system around.</p>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <h3>Meet The Locals</h3>
+            <div class="locals">
+                <div class="celestial">
+                    <img src="images/sun.jpg" alt="">
+                    <h4>The Sun</h4>
+                    <a href="https://en.wikipedia.org/wiki/Sun" class="button planet">Learn More</a>
+                </div>
+                <div class="celestial">
+                    <img src="images/mercury.jpg" alt="">
+                    <h4>Mercury</h4>
+                    <a href="https://en.wikipedia.org/wiki/Mercury_(planet)" class="button planet">Learn More</a>
+                </div>
+                <div class="celestial">
+                    <img src="images/venus.jpg" alt="">
+                    <h4>Venus</h4>
+                    <a href="https://en.wikipedia.org/wiki/Venus" class="button planet">Learn More</a>
+                </div>
+                <div class="celestial">
+                    <img src="images/earth.jpg" alt="">
+                    <h4>Earth</h4>
+                    <a href="https://en.wikipedia.org/wiki/Earth" class="button planet">Learn More</a>
+                </div>
+                <div class="celestial">
+                    <img src="images/moon.jpg" alt="">
+                    <h4>Moon</h4>
+                    <a href="https://en.wikipedia.org/wiki/Moon" class="button planet">Learn More</a>
+                </div>
+                <div class="celestial">
+                    <img src="images/mars.jpg" alt="">
+                    <h4>Mars</h4>
+                    <a href="https://en.wikipedia.org/wiki/Mars" class="button planet">Learn More</a>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 - The System</p>
+        </footer>
+    </div>
 </body>
 </html>
