@@ -1,0 +1,126 @@
+:root {
+    --primary-accent: #2e63a1;
+    --secondary-accent: #741b7a;
+    --copy-color: white;
+    --back-color: black;
+}
+
+.wrapper {
+    width: 100%;
+    margin: auto;
+}
+
+body {
+    background-color: var(--back-color);
+    color: var(--copy-color);
+    font-family: "Lato", sans-serif;
+}
+
+h1 {
+    font-family: "Playfair Display", serif;
+    text-align: center;
+}
+
+h1::after {
+/* ?????? */
+    z-index: -1;
+    position: absolute;
+}
+
+nav ul {
+    padding-left: 0;
+
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+nav ul div.navlinks {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+a {
+    text-decoration: none;
+}
+
+.button {
+    background-color: var(--primary-accent);
+    padding: 10px;
+    border-radius: 20px;
+    color: var(--copy-color);
+    font-weight:600;
+}
+.planet {
+    background-color: var(--secondary-accent);
+}
+
+.splash {
+    
+    position:relative;
+    
+}
+.splash-img {
+    
+    object-fit: cover;
+    box-shadow: 1px 10px 69px 20px rgba(255,255,255,0.1);
+}
+
+.splash-text {
+    text-align: center;
+    position: absolute;
+    bottom: 3em;
+    
+}
+
+.splash-text h2 span {
+    color:#57a9be;
+    
+    animation-name: colorChange;
+    animation-duration: 5s;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+    
+}
+
+.locals {
+    display:grid;
+    gap: 50px;
+}
+
+.celestial {
+    text-align:center;
+}
+
+footer {
+    border-top: 2px solid rgb(31, 31, 31);
+    /* text-align:center; */
+    margin-top:40px;
+    padding:10px;
+}
+
+footer p {
+    text-align:center;
+    font-weight:700;
+}
+
+@media screen and (min-width: 500px){
+
+}
+
+@media screen and (min-width: 900px){ 
+
+}
+
+
+/* ANIMATIONS */
+@keyframes colorChange {
+    0% {
+         color: #57a9be;
+    } 
+    
+    100% {
+         color: #356fa6;
+    }
+ }
