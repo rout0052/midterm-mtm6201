@@ -1,3 +1,4 @@
+/* VARIABLES */
 :root {
     --primary-accent: #2e63a1;
     --secondary-accent: #741b7a;
@@ -5,8 +6,9 @@
     --back-color: black;
 }
 
+/*  */
 .wrapper {
-    width: 100%;
+    width:100%;
     margin: auto;
 }
 
@@ -15,6 +17,51 @@ body {
     color: var(--copy-color);
     font-family: "Lato", sans-serif;
 }
+
+/* TEXT SIZING */
+h1 {
+    font-size: 1.75em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+    font-weight: 800;
+}
+
+h4 {
+    font-size: 1.25em;
+}
+
+h6 {
+    font-size: 0.8em;
+    font-weight:700;
+}
+
+
+
+/* SKIP LINKS */
+.skip {
+    padding: 10px;
+    background-color: white;
+    color: black;
+    border-radius: 0px 0px 10px 10px;
+    text-align: center;
+    
+}
+
+/* Added to override the a:visited styling since that makes the color of links stay white on visited, which conflicts with the white skip link buttons */
+.skip:visited {
+    color: black;
+}
+
+
+
+
+/* THE SYSTEM HEADER */
 
 h1 {
     font-family: "Playfair Display", serif;
@@ -27,6 +74,8 @@ h1::after {
     position: absolute;
 }
 
+
+/* NAV */
 nav ul {
     padding-left: 0;
 
@@ -36,38 +85,79 @@ nav ul li {
     list-style-type: none;
 }
 
-nav ul div.navlinks {
+nav ul {
     display: flex;
     justify-content: space-evenly;
 }
 
+/* BUTTONS / LINKS GENERAL */
+
 a {
+    background-color: none; 
     text-decoration: none;
+    color: var(--copy-color);
+    
 }
 
-.button {
-    background-color: var(--primary-accent);
+
+a:visited {
+    color: var(--copy-color);
+}
+
+nav ul li a {
+    transition: background-color 0.5s, color 0.5s, transform 0.5s;
+}
+
+nav ul li a, a.button {
     padding: 10px;
+    border-radius: 20px;
+    display: inline-block; /* This is necessary to allow transforms on the buttons, as by default they are display: inline which cannot be transformed */
+}
+
+a.button {
+    background-color: var(--primary-accent);
     border-radius: 20px;
     color: var(--copy-color);
     font-weight:600;
-}
-.planet {
-    background-color: var(--secondary-accent);
+    transition: background-color 0.5s, color 0.5s, transform 0.5s;  
+
 }
 
-.splash {
-    
-    position:relative;
-    
+a.button:visited {
+    background-color: var(--secondary-accent);
+    transition: background-color 0.5s, color 0.5s;  
+
 }
+
+a.button:hover, nav ul li a:hover {
+    color: black;
+    transform: scale(1.1);
+    background-color: #86ebd3;
+    transition: background-color 0.5s, color 0.5s, transform 0.5s;
+}
+
+/* Focus state for all links (including title) */
+a:focus {
+    border: 3px solid red;
+}
+
+/* SPLASH DIV */
+
+.splash {
+    position:relative;
+}
+
 .splash-img {
-    
+    width: 100%;
+    height: 550px;
     object-fit: cover;
     box-shadow: 1px 10px 69px 20px rgba(255,255,255,0.1);
+    
 }
 
 .splash-text {
+    padding-left: 30px;
+    padding-right: 30px;
     text-align: center;
     position: absolute;
     bottom: 3em;
@@ -84,33 +174,81 @@ a {
     
 }
 
+/* MEETS THE LOCALS */
+main {
+    text-align:center;
+}
 .locals {
     display:grid;
     gap: 50px;
 }
 
 .celestial {
-    text-align:center;
+    text-align:center; /* Unecessary for now, but makes it easier for when we remove the text-align from main on desktop */
 }
 
+
+
+
+/* FOOTER */
+
+/* Adds top border, top margin, and padding around the footer */
 footer {
     border-top: 2px solid rgb(31, 31, 31);
-    /* text-align:center; */
     margin-top:40px;
     padding:10px;
 }
 
+/* Aligns the footer paragraph text in the center and bolds it */
 footer p {
     text-align:center;
     font-weight:700;
 }
 
-@media screen and (min-width: 500px){
-
+.celestial > img {
+    width: 50%;
 }
 
-@media screen and (min-width: 900px){ 
 
+/* TABLET SCREEN SIZE */
+@media screen and (min-width: 500px){
+    .splash-text {
+        text-align: left;
+    }
+    .locals {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px
+    }
+    .celestial > img {
+        width: 100%;
+    }
+}
+
+/* DESKTOP SCREEN SIZE */
+@media screen and (min-width: 900px){ 
+    .wrapper {
+        width: 80%;
+        max-width: 1000px;
+    }
+
+    nav {
+        display: flex;
+    }
+    nav h1 {
+        text-align: left;
+        flex-grow: 1;
+    }
+    nav ul li {
+        margin-left: 40px;
+    }
+    .splash-img {
+        border-radius: 30px;
+    }
+
+    .locals {
+        grid-template-columns: repeat(6, 1fr);
+        width:100%;        
+    }
 }
 
 
@@ -124,3 +262,14 @@ footer p {
          color: #356fa6;
     }
  }
+
+ /* @keyframes imgZoom {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.25);
+
+    }
+ } */
