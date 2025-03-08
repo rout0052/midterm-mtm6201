@@ -18,14 +18,14 @@
 </head>
 <body>
     <div class="wrapper">
-        <header>
+        <header role="banner"> <!-- ARIA landmark role - redundant role added to show knowledge of ARIA roles -->
             <div>
                 <a href="#nav" class="skip">Skip to nav</a>
                 <a href="#content" class="skip">Skip to content</a>
             </div>
             
 
-            <nav id="nav"> <!-- ID For skip links -->
+            <nav id="nav" role="navigation"> <!-- ID For skip links, role for ARIA -->
                 <h1><a href="index.html">THE SYSTEM</a></h1>
 
                 <ul>
@@ -35,7 +35,7 @@
                 </ul>
             </nav>
 
-            <div class="splash" id="content">
+            <div class="splash" id="content"> <!-- ID For skip links -->
                 <img class="splash-img" src="images/milky-way.jpg" alt="A image of the Milky Way galaxy - a starry sky with a line of glowing galaxy going from the bottom left to the top right.">
                 <div class="splash-text">
                     <h6>THE SYSTEM MAGAZINE</h6>
@@ -45,7 +45,7 @@
             </div>
         </header>
 
-        <main>
+        <main role="main"> <!-- ARIA landmark role -->
             <h3>Meet The Locals</h3>
             <div class="locals">
                 <div class="celestial">
@@ -81,7 +81,7 @@
             </div>
         </main>
 
-        <footer>
+        <footer role="contentinfo"> <!-- ARIA landmark role -->
             <p>&copy; 2025 - The System</p>
         </footer>
     </div>
