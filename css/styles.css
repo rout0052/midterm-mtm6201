@@ -50,7 +50,6 @@ h6 {
     color: black;
     border-radius: 0px 0px 10px 10px;
     text-align: center;
-    
 }
 
 /* Added to override the a:visited styling since that makes the color of links stay white on visited, which conflicts with the white skip link buttons */
@@ -58,27 +57,51 @@ h6 {
     color: black;
 }
 
+/* NAV */
+
+/* Changes the full nav display to flex with wrap - including the h1 */
+nav {
+    display: flex;
+    flex-wrap:wrap;
+}
+
 
 /* THE SYSTEM HEADER */
 
-h1 {
+/* Changes font-family of H1 to Playfair Display, and centers the text. Changes position of h1 to relative to allow the stripe. Centers the text using margin-left and margin-right auto, and removes the margin-bottom. */
+nav h1 {
     font-family: "Playfair Display", serif;
     text-align: center;
+    
+    position: relative;
+
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom: 0;
 }
 
-h1::after {
-/* ?????? */
-    z-index: -1;
+/* Adding the stripe to the h1 - empty content box to provide a basis for the stripe. Absolute position with a -1 z-index to place it behind the text. Adds background colour for the stripe. By using the amount of characters it'd be covering (6/9), I used the width of 67% or one third. I eye-balled the height according to the images. Then, I used left and top to move them into the correct position.  */
+nav h1::after {
+    content: "";
     position: absolute;
+    z-index: -1;
+    
+    background-color: #337ab7; 
+    
+    width: 67%;
+    height: 40%;
+    
+    left: 35%;
+    top: 33%;       
 }
 
 
-/* NAV */
-
-/* Removes default padding from ul in the nav */
+/* Removes default padding from ul in the nav.Displays the nav ul in flex, dividing the space evenly between. Gives it 100% width to have the links on a different line than the H1. */
 nav ul {
     padding-left: 0;
-
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
 }
 
 /* Removes bullet points from the nav ul */
@@ -86,11 +109,6 @@ nav ul li {
     list-style-type: none;
 }
 
-/* Displays the nav ul in flex, dividing the space evenly between */
-nav ul {
-    display: flex;
-    justify-content: space-evenly;
-}
 
 /* BUTTONS / LINKS GENERAL */
 
@@ -141,7 +159,6 @@ nav ul li a:hover, a.button:hover {
 
     transition: background-color 0.5s, color 0.5s, transform 0.5s;
 }
-
 
 /* SPLASH DIV */
 
@@ -252,17 +269,30 @@ footer p {
         max-width: 1000px;
     }
 
-    /* Changes the full nav display to flex - including the h1 */
+    /* Changes the flex justify to space-between to push the links to one side, and the h1 to the other */
     nav {
-        display: flex;
+        justify-content: space-between;
     }
 
-    /* Aligns the nav's h1 to the left, and allows it to take up the remaining flex space, pushing the ul to the other size. */
+    /* Aligns the nav's h1 to the left, and removes the auto margins that center it.*/
     nav h1 {
         text-align: left;
-        flex-grow: 1;
+        margin-left:0;
+        margin-right:0;
     }
     
+    /* The added space from the buttons changes the height of the h1, throwing off the height and top for the stripe, so this is modification for desktop */
+    nav h1::after {
+        height: 30%;
+        top: 30%;
+    }
+
+    /* Changes the nav ul from the 100% it was previously at, in order to fit it onto the same line with flex. */
+    nav ul {
+        width:40%;
+    }
+
+
     /* Spaces out the list items to add some breathing room & room to scale on hover */
     nav ul li {
         margin-left: 40px;
