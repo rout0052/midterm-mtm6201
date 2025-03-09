@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Google Fonts Link -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
@@ -17,7 +18,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="wrapper">
+    <div class="wrapper">  <!-- Wraps all content in order to center it with margin:auto -->
         <header role="banner"> <!-- ARIA landmark role - redundant role added to show knowledge of ARIA roles -->
             <div>
                 <a href="#nav" class="skip">Skip to nav</a>
@@ -26,64 +27,65 @@
             
 
             <nav id="nav" role="navigation"> <!-- ID For skip links, role for ARIA -->
-                <h1><a href="index.html">THE SYSTEM</a></h1>
+                <h1><a href="index.html">THE SYSTEM</a></h1>  <!-- Separate h1 link for the home button -->
 
-                <ul>
+                <ul>  <!-- list for other page links -->
                     <li><a href="#">Planets</a></li>
                     <li><a href="#">Interstellar</a></li>
-                    <li><a href="#" class="button">Contact</a></li>   
+                    <li><a href="#" class="button">Contact</a></li>  <!-- Class "button" for this and the learn mores since they consistently have background color, and the others don't -->   
                 </ul>
             </nav>
 
-            <div class="splash" id="content"> <!-- ID For skip links -->
+            <div class="splash" id="content"> <!-- Splash screen div. ID For skip links --> 
                 <img class="splash-img" src="images/milky-way.jpg" alt="A image of the Milky Way galaxy - a starry sky with a line of glowing galaxy going from the bottom left to the top right.">
                 <div class="splash-text">
-                    <h6>THE SYSTEM MAGAZINE</h6>
-                    <h2>Welcome To The <span class="color-animation">Solar System</span></h2>
+                    <h6>THE SYSTEM MAGAZINE</h6>  <!-- Chose a H6 since it is the least important, smallest heading.  -->
+                    <h2>Welcome To The <span class="color-animation">Solar System</span></h2>  <!-- Span with class color-animation. Chose to use an additional class here instead of just the span for scalibility if there were to be other spans  -->
                     <p>Take a tour around the coolest stellar system around.</p>
                 </div>
             </div>
         </header>
 
         <main role="main"> <!-- ARIA landmark role -->
-            <h3>Meet The Locals</h3>
-            <div class="locals">
-                <div class="celestial">
+            <h3>Meet The Locals</h3> 
+            <div class="locals">  <!-- Grid applies to this div -->
+                <div class="celestial">  <!-- Each celestial body in this div follows the same rules: img with appropriate alt text, h4 with its name, and a link with the class button -->
                     <img src="images/sun.jpg" alt="The Sun from space - a glowing orange, red and yellow star swirling together.">
                     <h4>The Sun</h4>
-                    <a href="https://en.wikipedia.org/wiki/Sun" class="button planet">Learn More</a>
+                    <a href="https://en.wikipedia.org/wiki/Sun" class="button">Learn More</a>
                 </div>
                 <div class="celestial">
                     <img src="images/mercury.jpg" alt="Mercury from space - a grey planet speckled with white streaks">
                     <h4>Mercury</h4>
-                    <a href="https://en.wikipedia.org/wiki/Mercury_(planet)" class="button planet">Learn More</a>
+                    <a href="https://en.wikipedia.org/wiki/Mercury_(planet)" class="button">Learn More</a>
                 </div>
                 <div class="celestial">
                     <img src="images/venus.jpg" alt="Venus from space - a burnt orange planet with swirls of muted yellow across it.">
                     <h4>Venus</h4>
-                    <a href="https://en.wikipedia.org/wiki/Venus" class="button planet">Learn More</a>
+                    <a href="https://en.wikipedia.org/wiki/Venus" class="button">Learn More</a>
                 </div>
                 <div class="celestial">
                     <img src="images/earth.jpg" alt="The Earth from space - a blue planet with large land masses and clouds in the atmosphere.">
                     <h4>Earth</h4>
-                    <a href="https://en.wikipedia.org/wiki/Earth" class="button planet">Learn More</a>
+                    <a href="https://en.wikipedia.org/wiki/Earth" class="button">Learn More</a>
                 </div>
                 <div class="celestial">
                     <img src="images/moon.jpg" alt="The Moon from space - a celestial body with various colours of grey speckled with white.">
                     <h4>Moon</h4>
-                    <a href="https://en.wikipedia.org/wiki/Moon" class="button planet">Learn More</a>
+                    <a href="https://en.wikipedia.org/wiki/Moon" class="button">Learn More</a>
                 </div>
                 <div class="celestial">
                     <img src="images/mars.jpg" alt="Mars from space - a muted red/orange planet with a grey shadow on the bottom.">
                     <h4>Mars</h4>
-                    <a href="https://en.wikipedia.org/wiki/Mars" class="button planet">Learn More</a>
+                    <a href="https://en.wikipedia.org/wiki/Mars" class="button">Learn More</a>
                 </div>
             </div>
         </main>
 
-        <footer role="contentinfo"> <!-- ARIA landmark role -->
-            <p>&copy; 2025 - The System</p>
+        
+        <footer role="contentinfo"> <!-- Footer section. ARIA landmark role -->
+            <p>&copy; 2025 - The System</p>  <!-- ASCII Copyright symbol is &copy; -->
         </footer>
-    </div>
+    </div>  <!-- Close Wrapper -->
 </body>
 </html>
