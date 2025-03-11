@@ -25,6 +25,7 @@ h1 {
 
 h2 {
     font-size: 2em;
+    margin: 15px 0px 15px 0px; 
 }
 
 h3 {
@@ -43,7 +44,6 @@ h6 {
 }
 
 
-
 /* SKIP LINKS */
 .skip {
     padding: 10px;
@@ -58,18 +58,21 @@ h6 {
     color: black;
 }
 
+
+
 /* NAV */
 
-/* Changes the full nav display to flex with wrap - including the h1 */
+/* Changes the full nav display to flex with wrap - including the h1. Adds margin above and below. */
 nav {
     display: flex;
     flex-wrap:wrap;
+    margin: 20px 0px 20px 0px;
 }
 
 
 /* THE SYSTEM HEADER */
 
-/* Changes font-family of H1 to Playfair Display, and centers the text. Changes position of h1 to relative to allow the stripe. Centers the text using margin-left and margin-right auto, and removes the margin-bottom. */
+/* Changes font-family of H1 to Playfair Display, and centers the text. Changes position of h1 to relative to allow the stripe. Centers the text using margin-left and margin-right auto, and separates the h1 from the nav links with margin-bottom */
 nav h1 {
     font-family: "Playfair Display", serif;
     text-align: center;
@@ -78,7 +81,7 @@ nav h1 {
 
     margin-left:auto;
     margin-right:auto;
-    margin-bottom: 0;
+    margin-bottom: 10px;
 }
 
 /* Adding the stripe to the h1 - empty content box to provide a basis for the stripe. Absolute position with a -1 z-index to place it behind the text. Adds background colour for the stripe. By using the amount of characters it'd be covering (6/9), I used the width of 67% or one third. I eye-balled the height according to the images. Then, I used left and top to move them into the correct position.  */
@@ -113,7 +116,7 @@ nav ul li {
 
 /* BUTTONS / LINKS GENERAL */
 
-/* Removes text-decoration and color from blue to white (copy-color) for all links */
+/* Removes underline and color from blue to white (copy-color) for all links */
 a {
     text-decoration: none;
     color: var(--copy-color);  
@@ -131,7 +134,7 @@ a:focus {
 
 /* Sets up nav links, and links styled as buttons for hover transitions, adding the transition, proper display settings, padding and border radius */
 nav ul li a, a.button {
-    padding: 10px;
+    padding: 5px 15px 5px 15px;
     border-radius: 20px;
     display: inline-block; /* This is necessary to allow transforms on the buttons, as by default they are display: inline which cannot be transformed */
 
@@ -167,7 +170,7 @@ nav ul li a:hover, a.button:hover {
 .splash {
     position:relative;
     overflow: hidden;
-    box-shadow: 1px 10px 70px 20px rgba(255,255,255,0.1);
+    box-shadow: 0px 10px 70px 20px rgba(255,255,255,0.1);
 }
 
 /* Image on the splash banner: mobile first approach, so for the mobile state, the width is 100% of the viewport and an approximate 550px height. Object-fit: cover centered the image and did not distort the image. imgZoom animation settings below */
@@ -228,24 +231,33 @@ main {
     margin:auto;
 }
 
+.celestial > a.button, .celestial h4 {
+    margin-top: 15px;
+}
+
 /* FOOTER */
 
 /* Adds top border, top margin, and padding around the footer */
 footer {
     border-top: 2px solid rgb(31, 31, 31);
     margin-top:40px;
-    padding:10px;
+    padding:20px;
 }
 
-/* Aligns the footer paragraph text in the center and bolds it */
+/* Aligns the footer paragraph text in the center, bolds it */
 footer p {
     text-align:center;
-    font-weight:700;
+    font-weight:900;
 }
 
 
 /* TABLET SCREEN SIZE */
 @media screen and (min-width: 500px){
+    /* Shortens the margin between the h6 and h2 as is done in the prototype image */
+    h2 {
+        margin-top: 5px;
+    }
+
     /* Changes the splash's text alignment to the left */
     .splash-text {
         text-align: left;
@@ -257,14 +269,15 @@ footer p {
         gap: 20px
     }
 
-    /* Makes the celestial body images once again take up its full alloted width.  */
+    /* Makes the celestial body images take up 80% full width to allow for spacing.  */
     .celestial > img {
-        width: 100%;
+        width: 80%;
     }
 }
 
 /* DESKTOP SCREEN SIZE */
 @media screen and (min-width: 900px){ 
+    /* Aligns the h3 ("Meet the Locals") to the left in accordance with the prototype */
     h3 {
         text-align:left;
     }
@@ -286,22 +299,23 @@ footer p {
         margin-left:0;
         margin-right:0;
     }
-    
+
     /* The added space from the buttons changes the height of the h1, throwing off the height and top for the stripe, so this is modification for desktop */
     nav h1::after {
         height: 30%;
-        top: 30%;
+        top: 40%;
     }
 
-    /* Changes the nav ul from the 100% it was previously at, in order to fit it onto the same line with flex. */
+    /* Aligns the content to the right of the screen. Changes the nav ul from the 100% it was previously at, in order to fit it onto the same line with flex. */
     nav ul {
-        width:40%;
+        justify-content: right;
+        width:60%;
     }
 
 
     /* Spaces out the list items to add some breathing room & room to scale on hover */
     nav ul li {
-        margin-left: 40px;
+        margin-left: 20px;
     }
 
     /* Adds a border radius to the splash */
@@ -313,6 +327,11 @@ footer p {
     .locals {
         grid-template-columns: repeat(6, 1fr);
         width:100%;        
+    }
+    
+    /* Adjusts the images in the celestial divs to take up the full space now. */
+    .celestial > img {
+        width: 100%;
     }
 }
 
